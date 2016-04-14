@@ -14,9 +14,23 @@ public class User implements Serializable{
 	private String username;
 	private String password;
 	private Role role;
+	private Article article;
 	
 	
-	
+	@ManyToOne
+    @JoinColumn(name = "titre")
+	public Article getArticle() {
+		return article;
+	}
+
+
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+
+
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
